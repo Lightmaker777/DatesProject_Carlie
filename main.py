@@ -10,7 +10,7 @@ import pytz
 # provides options to extract specific units (seconds, days, or years) from it. 
 # Allow users to choose which unit they want to display.
 
-'''def extract_timedelta_units(td):
+def extract_timedelta_units(td):
     # Dictionary mapping user's input to unit values
     choices = {
         "1": td.total_seconds(),          # Option 1: Total seconds in timedelta
@@ -33,7 +33,7 @@ import pytz
 # Example usage
 td = timedelta(days=500, seconds=3600)
 unit = extract_timedelta_units(td)
-print(f"Result: {unit}")'''
+print(f"Result: {unit}")
 
 #----------------------------------------------------------------------------------------------------
 
