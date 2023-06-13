@@ -31,7 +31,7 @@ def get_option():               #prints the menu and returns an option
         print('8.  : Determine and display the current time at the opposite end of the world')
         print('9.  : Output a random joke from a predefined collection')
         print('10: : Surprise feature of your choice')
-        print('\n"EXIT" for exiting the program')
+        print('\n"exit" for exiting the program')
         
         option = input('Select an option:').lower()
 
@@ -111,7 +111,7 @@ def sol_7():    #Hernan
         local_time = datetime.now()
         target_time = local_time.astimezone(target_timezone)
         formatted_time = target_time.strftime('%Y-%m-%d %H:%M')
-        
+
         print(f'Current time: {formatted_time}\n')
     else:
         print('Time zone is not valid. Press ENTER to continue...')
