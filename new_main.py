@@ -74,10 +74,10 @@ def sol_5(td):    #Ievgeniia
         choice = input("Enter your choice (1-3): ")
 
         if choice in choices:
-            return choices[choice]         # Return the corresponding unit value
-            #return 0
+            return choices[choice]         # Return the corresponding unit value            
         else:
             print("Invalid choice. Please try again.")
+            return 0    
 
 # Example usage
 td = timedelta(days=500, seconds=3600)
@@ -106,13 +106,14 @@ def sol_6(year=None, month=None):    #Ievgeniia
     # Print each day in the calendar matrix
     for week in cal:
         print(" ".join(f"{day:2d}" if day != 0 else "  " for day in week))
+        return 0
 
 # Example usage
 sol_6()  # Print calendar for the current month and year
 
 # Alternatively, specify a different year and month
 #sol_6(year=2023, month=6)
-#return 0
+
 
 def sol_7():    #Hernan
     return 0
