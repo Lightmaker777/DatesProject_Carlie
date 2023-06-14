@@ -109,7 +109,7 @@ def sol_6(year=None, month=None):    #Ievgeniia
         return 0
 
 # Example usage
-sol_6()  # Print calendar for the current month and year
+sol_6(year=None, month=None)  # Print calendar for the current month and year
 
 # Alternatively, specify a different year and month
 #sol_6(year=2023, month=6)
@@ -143,9 +143,9 @@ while command != 'exit':
     elif command == '4':
         sol_4()
     elif command == '5':
-        sol_5()
+        sol_5(td)
     elif command == '6':
-        sol_6()
+        sol_6(year=None, month=None)
     elif command == '7':
         sol_7()
     elif command == '8':
