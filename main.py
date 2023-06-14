@@ -4,7 +4,7 @@ import calendar
 import time
 import os
 import pytz
-# import datetime
+
 #Converting a string to a datetime object
 datetime_string = input("Enter a datetime in this format 'mm/dd/yy h:m:s': ")
 # convert datetime string to datetime object
