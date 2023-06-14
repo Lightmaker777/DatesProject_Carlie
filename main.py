@@ -139,7 +139,7 @@ def sol_8():    #Marouan
     BerlinTz = pytz.timezone("Europe/Berlin")
     timeInBerlin = datetime.now(BerlinTz)
     CurrentTimeInBerlin = timeInBerlin.strftime("%H:%M:%S")
-    print("the currentTime In Berlin is ", CurrentTimeInBerlin)
+    print("the current time In Berlin is ", CurrentTimeInBerlin)
     # Get the current time in Sydney
     sydney_tz = pytz.timezone('Australia/Sydney')
     sydney_time = datetime.now(sydney_tz)
