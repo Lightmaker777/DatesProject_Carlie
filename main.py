@@ -6,7 +6,7 @@ import os
 import pytz
 
 #Converting a string to a datetime object
-datetime_string= '09/19/22 13:55:26'
+datetime_string = input("Enter a datetime in this format 'mm/dd/yy h:m:s': ")
 # convert datetime string to datetime object
 datetime_object = datetime.strptime(datetime_string, '%m/%d/%y %H:%M:%S')
 
