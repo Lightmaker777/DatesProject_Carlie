@@ -30,8 +30,8 @@ def get_option():               #prints the menu and returns an option
         print('7.  : Multinational team / Time Zone selection')
         print('8.  : Determine and display the current time at the opposite end of the world')
         print('9.  : Output a random joke from a predefined collection')
-        print('10: : Surprise feature of your choice')
-        print('\n"EXIT" for exiting the program')
+        print('10. : Surprise feature of your choice')
+        print('\n"exit" for exiting the program')
         
         option = input('Select an option:').lower()
 
@@ -56,6 +56,21 @@ def sol_3():    #Gloria
     return 0
 
 def sol_4():    #Hernan
+
+    current_year = datetime.now().year
+
+    if calendar.isleap(current_year):
+        print(f"{current_year} is a leap year.\n")
+    else:
+        print(f"{current_year} is not a leap year.\n")
+
+    next_leap_year = current_year
+    while not calendar.isleap(next_leap_year):
+        next_leap_year += 1
+    
+    time_remaining = datetime(next_leap_year, 1, 1) - datetime.now()
+    print(f"Time remaining until the next leap year: {time_remaining.days} days.\n")
+
     return 0
 
 def sol_5(td):    #Ievgeniia
@@ -77,15 +92,17 @@ def sol_5(td):    #Ievgeniia
             return choices[choice]         # Return the corresponding unit value            
         else:
             print("Invalid choice. Please try again.")
-            return 0    
-
+            return 0
 # Example usage
 td = timedelta(days=500, seconds=3600)
 unit = sol_5(td)
-print(f"Result: {unit}")
-    
+print(f"Result: {unit}")     
 
-def sol_6(year=None, month=None):    #Ievgeniia    
+
+def sol_6(year=None, month=None):     #Ievgeniia
+    # Input for new date
+    year = int(input("Enter the year: "))
+    month = int(input("Enter the month: ")) 
     # Get the current year and month if not provided
     if year is None:
         year = calendar.datetime.datetime.now().year
@@ -107,15 +124,45 @@ def sol_6(year=None, month=None):    #Ievgeniia
     for week in cal:
         print(" ".join(f"{day:2d}" if day != 0 else "  " for day in week))
         return 0
-
-# Example usage
-sol_6(year=None, month=None)  # Print calendar for the current month and year
-
-# Alternatively, specify a different year and month
-#sol_6(year=2023, month=6)
-
+sol_6()
 
 def sol_7():    #Hernan
+
+    print('Your team is a multinational one meeting a regional leader based in Tokyo, Japan with the following regions:')
+    print('[1] Tokyo/ Japan')
+    print('[2] Dublin / Ireland')
+    print('[3] San Francisco / USA')
+    print('[4] Berlin / Germany')
+    print('[5] Johannesburg / South Africa\n')
+
+    time_zone = input('Select a time zone to check its time:')
+
+    if time_zone in ['1','2','3','4','5']:
+  
+        if time_zone == '1':
+            target_timezone = pytz.timezone('Asia/Tokyo')
+            print('Time zone selected: Tokyo / Japan') 
+        elif time_zone == '2':
+            target_timezone = pytz.timezone('Europe/Dublin')
+            print('Time zone selected: Dublin / Ireland')  
+        elif time_zone == '3':
+            target_timezone = pytz.timezone('America/Los_Angeles')
+            print('Time zone selected: San Francisco / USA')  
+        elif time_zone == '4':
+            target_timezone = pytz.timezone('Europe/Berlin')
+            print('Time zone selected: Berlin / Germany') 
+        elif time_zone == '5':
+            target_timezone = pytz.timezone('Africa/Johannesburg')
+            print('Time zone selected: Johannesburg / South Africa ') 
+
+        local_time = datetime.now()
+        target_time = local_time.astimezone(target_timezone)
+        formatted_time = target_time.strftime('%Y-%m-%d %H:%M')
+
+        print(f'Current time: {formatted_time}\n')
+    else:
+        print('Time zone is not valid. Press ENTER to continue...')
+
     return 0
 
 def sol_8():    #Marouan
@@ -134,6 +181,8 @@ command = get_option()
 
 while command != 'exit':
 
+    clear_scr()
+
     if command == '1':
         sol_1()
     elif command == '2':
@@ -145,7 +194,7 @@ while command != 'exit':
     elif command == '5':
         sol_5(td)
     elif command == '6':
-        sol_6(year=None, month=None)
+        sol_6()
     elif command == '7':
         sol_7()
     elif command == '8':
