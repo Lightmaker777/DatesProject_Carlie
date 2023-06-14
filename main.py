@@ -1,4 +1,3 @@
-
 from datetime import datetime
 import calendar
 import time
@@ -11,6 +10,12 @@ last_joke = None
 
 # way number 1
 
+def clear_scr():
+    # Clear screen command based on the operating system
+    if os.name == 'posix':  # For UNIX and Linux systems (e.g., macOS, Linux)
+        _ = os.system('clear')
+    elif os.name == 'nt':  # For Windows systems
+        _ = os.system('cls')
     
 def get_option():               #prints the menu and returns an option
 
