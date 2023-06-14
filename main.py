@@ -185,24 +185,25 @@ def sol_7():    #Hernan
     return 0
 
 def sol_8():    #Marouan
-    SydneyTz = pytz.timezone("Australia/Sydney")
-    timeInSydney = datetime.now(SydneyTz)
-    currentTimeInSydney = timeInSydney.strftime("%H:%M:%S")
-    print("The current time In Sydney is:", currentTimeInSydney)
-    BerlinTz = pytz.timezone("Europe/Berlin")
-    timeInBerlin = datetime.now(BerlinTz)
-    CurrentTimeInBerlin = timeInBerlin.strftime("%H:%M:%S")
-    print("the current time In Berlin is ", CurrentTimeInBerlin)
-    # Get the current time in Sydney
-    sydney_tz = pytz.timezone('Australia/Sydney')
-    sydney_time = datetime.now(sydney_tz)
-    # Get the current time in another location
-    other_tz = pytz.timezone('Europe/Berlin')
-    other_time = datetime.now(other_tz)
-    # Calculate time difference between Sydney and other location
-    time_diff = other_time - sydney_time
-    # Display the time difference
-    print("Time difference between Sydney and Berlin:", time_diff)
+    # Define timezones for Sydney and Berlin
+    SydneyTz = pytz.timezone('Australia/Sydney')
+    BerlinTz = pytz.timezone('Europe/Berlin')
+    # Get current datetime in each timezone
+    datetimeInSydney = datetime.now(SydneyTz)
+    datetimeInBerlin = datetime.now(BerlinTz)
+    # Print the current time in Sydney and Berlin
+    print("The current time in Sydney is:", datetimeInSydney.strftime('%H:%M:%S'))
+    print("The current time in Berlin is:", datetimeInBerlin.strftime('%H:%M:%S'))
+    # Calculate the offset between UTC and local time in each timezone
+    Sydney_offset = datetimeInSydney.utcoffset()
+    Berlin_offset = datetimeInBerlin.utcoffset()
+    # Calculate the time difference
+    time_diff = Sydney_offset - Berlin_offset
+    # Since time_diff is a timedelta object, we need to convert it to hours and minutes
+    time_diff_hours = time_diff.seconds // 3600
+    time_diff_minutes = (time_diff.seconds // 60) % 60
+    # Print the time difference
+    print("Time difference between Sydney and Berlin: %d hours, %d minutes" % (time_diff_hours, time_diff_minutes))
     return 0
 
 def sol_9():    #Alex
