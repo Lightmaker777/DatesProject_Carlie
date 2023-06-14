@@ -53,6 +53,12 @@ def sol_2():    #Marouan
     return 0
 
 def sol_3():    #Gloria
+    #Converting a string to a datetime object
+    datetime_string = input("Enter a datetime in this format 'mm/dd/yy h:m:s': ")
+    # convert datetime string to datetime object
+    datetime_object = datetime.strptime(datetime_string, '%m/%d/%y %H:%M:%S')
+
+    print(datetime_object)
     return 0
 
 def sol_4():    #Hernan
@@ -108,11 +114,3 @@ while command != 'exit':
     command = get_option()
 
 #end main program
-
-
-#Converting a string to a datetime object
-datetime_string= '09/19/22 13:55:26'
-# convert datetime string to datetime object
-datetime_object = datetime.strptime(datetime_string, '%m/%d/%y %H:%M:%S')
-
-print(datetime_object)
