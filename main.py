@@ -6,6 +6,9 @@ import os
 import pytz
 import random
 
+#Globals
+last_joke = None
+
 def clear_scr():
     # Clear screen command based on the operating system
     if os.name == 'posix':  # For UNIX and Linux systems (e.g., macOS, Linux)
@@ -50,11 +53,8 @@ def get_option():               #prints the menu and returns an option
 def sol_1():    #Alex
     # Get the current time
     current_time = datetime.now()
+    formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
 
-    # Format the current time as a string
-    formatted_time = current_time.strftime("%H:%M:%S")
-
-    # Print the formatted time
     print("Current time:", formatted_time)
     return 0
 
@@ -131,20 +131,25 @@ def sol_8():    #Marouan
     return 0
 
 def sol_9():    #Alex
-    dad_jokes = [
-    "Why don't eggs tell jokes? Because they might crack up!",
-    "What do you call a fake noodle? An impasta!",
-    "Why did the scarecrow win an award? Because he was outstanding in his field!",
-    "Why did the bicycle fall over? It was two-tired!",
-    "How do you organize a space party? You 'planet'!",
-    "I used to play piano by ear, but now I use my hands!",
-    "Why don't skeletons fight each other? They don't have the guts!",
-    "What do you call a snowman with a six-pack? An abdominal snowman!",
-    "Why don't scientists trust atoms? Because they make up everything!",
-    "What did the ocean say to the shore? Nothing, it just waved!"]
 
-    print('Random dad Joke:\n')
-    print(random.choice(dad_jokes)+'\n')
+    global  last_joke
+
+    jokes = [
+    "Why don't scientists trust atoms? Because they make up everything!",
+    "What's the difference between a snowman and a snowwoman? Snowballs.",
+    "Why don't skeletons fight each other? They don't have the guts!",
+    "Why did the bicycle fall over? Because it was two-tired!",
+    "What do you call a bear with no teeth? A gummy bear!"
+    ]
+
+    random_joke = random.choice(jokes)
+    
+    
+    while random_joke == last_joke:
+        random_joke = random.choice(jokes)
+    
+    last_joke = random_joke
+    print(random_joke+'\n')
 
     return 0
 
