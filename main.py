@@ -48,6 +48,14 @@ def get_option():               #prints the menu and returns an option
 #solutions for each problem here
 
 def sol_1():    #Alex
+    # Get the current time
+    current_time = datetime.now()
+
+    # Format the current time as a string
+    formatted_time = current_time.strftime("%H:%M:%S")
+
+    # Print the formatted time
+    print("Current time:", formatted_time)
     return 0
 
 def sol_2():    #Marouan
