@@ -34,29 +34,30 @@ month = input("Enter travel month: ").title()
 if Country == 'germany':
     if month in ('March', 'April', 'May'):
         season = 'spring'
-        print(f"It is currently {season} in {Country}. This is a good time to travel.")
+        print(f"It will be {season} in {Country} by {month}. This is a good time to travel.")
     elif month in ('June','July', 'August'):
         season = 'summer'
-        print(f"It is currently {season} in {Country}. This is a good time to travel.")
+        print(f"It will be {season} in {Country} by {month}. This is a good time to travel.")
     elif month in ( 'September', 'October', 'November'):
         season = 'autumn'
-        print(f"It is currently {season} in {Country}. It is just about winter, but you can manage")
+        print(f"It will be {season} in {Country} by {month}. It is just about winter, but you can manage.")
     else:
         season = 'winter'
-        print(f"It is currently {season} in {Country} ")
+        print(f"It will be {season} in {Country} by {month}. You may want to consider traveling with winter jacket. ")
 
 elif Country == 'australia':
     if month in ('March', 'April', 'May'):
         season = 'autumn'
-        print(f"It is currently {season} in {Country}. It is just about winter, but you can manage.")
+        print(f"It will be {season} in {Country} by {month}. It is just about winter, but you can manage.")
     elif month in ('June','July', 'August'):
         season = 'winter'
+        print(f"It will be {season} in {Country} by {month}. You may want to consider traveling with winter jacket. ")
     elif month in ( 'September', 'October', 'November'):
         season = 'spring'
-        print(f"It is currently {season} in {Country}. This is a good time to travel.")
+        print(f"It will be {season} in {Country} by {month}. This is a good time to travel.")
     else:
         season = 'summer'
-        print(f"It is currently {season} in {Country}. This is a good time to travel.")
+        print(f"It will be {season} in {Country} by {month}. This is a good time to travel.")
     
 else:
     print("The country of your choice is not among the options")
