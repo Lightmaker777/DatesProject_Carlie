@@ -30,7 +30,7 @@ def get_option():               #prints the menu and returns an option
         print('7.  : Multinational team / Time Zone selection')
         print('8.  : Determine and display the current time at the opposite end of the world')
         print('9.  : Output a random joke from a predefined collection')
-        print('10: : Surprise feature of your choice')
+        print('10. : Surprise feature of your choice')
         print('\n"exit" for exiting the program')
         
         option = input('Select an option:').lower()
