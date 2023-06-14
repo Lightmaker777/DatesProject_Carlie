@@ -17,7 +17,7 @@ def clear_scr():
         _ = os.system('cls')
 
     
-def get_option():               #prints the menu and returns an option
+def get_option():                #prints the menu and returns an option
 
     option = ' '
     quit = False
