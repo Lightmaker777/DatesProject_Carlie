@@ -59,6 +59,10 @@ def sol_1():    #Alex
     return 0
 
 def sol_2():    #Marouan
+    dt = datetime.now()
+    print(dt)
+    seconds = time.time()
+    print("Seconds since epoch =", seconds)
     return 0
 
 def sol_3():    #Gloria
@@ -128,6 +132,24 @@ def sol_7():    #Hernan
     return 0
 
 def sol_8():    #Marouan
+    SydneyTz = pytz.timezone("Australia/Sydney")
+    timeInSydney = datetime.now(SydneyTz)
+    currentTimeInSydney = timeInSydney.strftime("%H:%M:%S")
+    print("The current time In Sydney is:", currentTimeInSydney)
+    BerlinTz = pytz.timezone("Europe/Berlin")
+    timeInBerlin = datetime.now(BerlinTz)
+    CurrentTimeInBerlin = timeInBerlin.strftime("%H:%M:%S")
+    print("the current time In Berlin is ", CurrentTimeInBerlin)
+    # Get the current time in Sydney
+    sydney_tz = pytz.timezone('Australia/Sydney')
+    sydney_time = datetime.now(sydney_tz)
+    # Get the current time in another location
+    other_tz = pytz.timezone('Europe/Berlin')
+    other_time = datetime.now(other_tz)
+    # Calculate time difference between Sydney and other location
+    time_diff = other_time - sydney_time
+    # Display the time difference
+    print("Time difference between Sydney and Berlin:", time_diff)
     return 0
 
 def sol_9():    #Alex
